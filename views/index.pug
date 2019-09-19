@@ -1,0 +1,55 @@
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(
+        name="viewport",
+        content="width=device-width, initial-scale=1.0"
+        )
+    link(
+        rel='stylesheet'
+        href='./style.css'
+    )
+    meta(
+        http-equiv="X-UA-Compatible",
+        content="ie=edge"
+        )
+    script(
+        src="https://kit.fontawesome.com/ae6886252d.js"
+            )
+    title Document
+body
+    div(class="conteiner")
+        div(class="contein")
+        div(class="action")
+            form
+                input(
+                    class='pole',
+                    id="text",
+                    type="text"
+                    )
+                input(
+                    type="button",
+                    id="btn",
+                    onclick="go()",
+                    value="GO"
+                    )
+        div(id="todo-list")
+            table
+                each val, index in god
+                    tr(id=val['text'])
+                        td #{val['text']}
+                        td
+                            i(
+                                class="far fa-star",
+                                onclick="premium()"
+                                )
+                        td
+                            button(
+                              id = val['_id'],
+                              class='del-one',
+                              onclick='del()',
+                              name = val['text']
+                            ) Видалити
+    script(
+        src="js.js"
+        )
